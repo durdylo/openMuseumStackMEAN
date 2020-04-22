@@ -1,30 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+import { Routes,RouterModule } from '@angular/router';
+import {AddMuseumComponent} from './add-museum/add-museum.component';
 import { AppComponent } from './app.component';
-// Service contenant le JSON de tous les musées et les méthodes associées
-import { MuseumListService } from './services/museumList.service';
-// Liste des musée : inclue SingleMuseumComponent
-import { MuseumListComponent } from './museum-list/museum-list.component';
-// Un musée dans la liste
+import {MuseumService} from './services/openmuseum.service'
 import { SingleMuseumComponent } from './single-museum/single-museum.component';
+import { IndexComponent } from './index/index.component';
+import { MuseumDetailComponent } from './museum-detail/museum-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
 
 const appRoutes:Routes = [
-  {path: '', component: MuseumListComponent}
-]
+  { path: 'add', component: AddMuseumComponent },
+  { path: 'singleMusuem', component: SingleMuseumComponent },
+  { path: 'museumDatails', component: MuseumDetailComponent },
+  { path: '', component: IndexComponent },
+  {path: 'not-found', component:NotFoundComponent},
+  {path: '**', redirectTo: 'not-found'},
 
+]
 @NgModule({
   declarations: [
     AppComponent,
     SingleMuseumComponent,
-    MuseumListComponent,
+    IndexComponent,
+    AddMuseumComponent,
+    MuseumDetailComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [MuseumListService],
+  providers: [MuseumService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MuseumService } from './services/openmuseum.service'
 
 @Component({
   selector: 'app-root',
@@ -6,11 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  constructor() {
-  }
-
   ngOnInit() {
-  };
-
+  }
+  constructor(private museumService: MuseumService) { }
 }
