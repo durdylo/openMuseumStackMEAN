@@ -1,5 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
-import {MuseumService} from '../services/openmuseum.service'
+import { Component, OnInit, Input } from '@angular/core';
+import { MuseumService } from '../services/openmuseum.service'
 
 @Component({
   selector: 'app-single-museum',
@@ -8,13 +8,14 @@ import {MuseumService} from '../services/openmuseum.service'
 })
 
 export class SingleMuseumComponent implements OnInit {
-  @Input()name:string;
-  @Input()opening:string;
-  @Input()zip:string;
-  @Input()city:string;
-  @Input()telephone:string;
-  @Input()adress:string;
-  @Input()website:string;
+  @Input() name: string;
+  @Input() opening: string;
+  @Input() zip: string;
+  @Input() city: string;
+  @Input() telephone: string;
+  @Input() adress: string;
+  @Input() website: string;
+  @Input() reference: string
   // @Input()reference:any;
 
 

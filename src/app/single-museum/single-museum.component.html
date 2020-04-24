@@ -9,8 +9,7 @@
     <li class="list-group-item">{{city}}</li>
     <li class="list-group-item"> <a href="tel:{{phone}}">{{telephone}}</a></li>
     <li class="list-group-item">
-      <a routerLink="museumDatails">see details</a>
-    </li>
+      <a [routerLink]="['museum/', reference]">View details</a> </li>
   </ul>
   <div class="card-body">
     <a href="{{website}}" class="card-link">{{website}}</a>

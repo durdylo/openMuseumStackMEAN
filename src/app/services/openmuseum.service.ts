@@ -1,4 +1,4 @@
-export class MuseumService{
+export class MuseumService {
   museums = [{
     opening: "Ouvert du 16 septembre au 14 juin de 10h à 12h et de 14h à 18h, du  15 juin au 15 septembre de 10h à 18h. Nocturnes en juillet et aout le mercredi et le vendredi jusqu'à 20h",
     name: "Musée Picasso",
@@ -212,12 +212,12 @@ export class MuseumService{
     dep: "BOUCHES DU RHONE"
   }
   ]
-  getMuseumById(reference:any) {
-   const museum = this.museums.find(
-     (s) => {
-       return s.reference === reference;
-     }
-   );
-   return museum;
- }
+  getMuseumById(reference: string) {
+    const museum = this.museums.find(
+      (s) => {
+        return s.reference === reference;
+      }
+    );
+    return museum;
+  }
 }
