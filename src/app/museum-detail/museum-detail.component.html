@@ -1,15 +1,86 @@
-<div class="card">
-  <div class="card-body">
-    <h2 class="card-title">{{museumTitle}}</h2>
-    <p class="card-text">test en dur</p>
+<h1>🏛️ {{museumTitle}}</h1>
+<div class="row">
+
+  <!-- MAP -->
+  <div class="col-6">
+    <app-map [museumLocation]="museum.coordinates" [museumPopUpName]="museum.name" [museumPopUpAdres]="museum.address">
+    </app-map>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">adresse en dur</li>
-    <li class="list-group-item">CP en dur</li>
-    <li class="list-group-item">ville en dur</li>
-    <li class="list-group-item"> <a href="tel:{{phone}}">tel en dur</a></li>
-  </ul>
-  <div class="card-body">
-    <a href="{{website}}" class="card-link">www.siteendur.fr</a>
+
+  <!-- Details du musée -->
+  <div class="col-6">
+
+    <article class="card mb-3 shadow-sm">
+      <div class="card-body">
+        <div class="card-title">
+          <!-- <h2 class="h4 mb-3">{{name}}</h2> -->
+        </div>
+        <div class="">
+          <!-- PHOTO -->
+        </div>
+        <!-- Localisation -->
+        <div class="row mb-2">
+          <div class="col-1">
+            📍
+          </div>
+          <div class="col-10">
+            <p class="card-text">
+              {{museum.address}}<br>
+              {{museum.cp}} {{museum.city}}
+            </p>
+          </div>
+        </div>
+        <!-- Phone -->
+        <div class="row mb-2">
+          <div class="col-1">
+            📞
+          </div>
+          <div class="col-10">
+            <p class="card-text"><a href="tel:{{telephone}}">{{museum.telephone}}</a></p>
+          </div>
+        </div>
+        <!-- Fax -->
+        <div class="row mb-2">
+          <div class="col-1">
+            📠
+          </div>
+          <div class="col-10">
+            <p class="card-text">{{museum.fax}}</p>
+          </div>
+        </div>
+        <!-- Website -->
+        <div class="row mb-2">
+          <div class="col-1">
+            💻
+          </div>
+          <div class="col-10">
+            <p class="card-text">
+              <a href="https://{{museum.website}}" target="blank">{{museum.website}}</a>
+            </p>
+          </div>
+        </div>
+        <!-- Opening hours -->
+        <div class="row mb-2">
+          <div class="col-1">
+            🕒
+          </div>
+          <div class="col-10">
+            <p class="card-text">{{museum.opening}}</p>
+          </div>
+        </div>
+        <!-- View detail -->
+        <div class="row mb-2">
+          <div class="col-1">
+            ⬅️
+          </div>
+          <div class="col-10">
+            <p class="card-text"><a routerLink="">Back to museums</a></p>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
   </div>
+
 </div>

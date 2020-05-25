@@ -1,25 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddMuseumComponent } from './add-museum/add-museum.component';
-import { AppComponent } from './app.component';
+
 import { MuseumService } from './services/openmuseum.service'
-import { SingleMuseumComponent } from './single-museum/single-museum.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { AddMuseumComponent } from './add-museum/add-museum.component';
 import { IndexComponent } from './index/index.component';
 import { MuseumDetailComponent } from './museum-detail/museum-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-
+import { SingleMuseumComponent } from './single-museum/single-museum.component';
+import { MapComponent } from './map/map.component';
 
 const appRoutes: Routes = [
   { path: 'add', component: AddMuseumComponent },
-  { path: 'singleMusuem', component: SingleMuseumComponent },
-  { path: 'museum/:reference', component: MuseumDetailComponent },
+  { path: 'singleMuseum', component: SingleMuseumComponent },
+  { path: 'museumDetail/:_id', component: MuseumDetailComponent },
   { path: '', component: IndexComponent },
-  { path: 'not-found', component: NotFoundComponent },
+  { path: 'not-found', component: NotFoundComponent }, // A ajouter à la fin des paths (en dernier)
   { path: '**', redirectTo: 'not-found' },
-
 ]
+
 @NgModule({
+
   declarations: [
     AppComponent,
     SingleMuseumComponent,
@@ -27,12 +31,17 @@ const appRoutes: Routes = [
     AddMuseumComponent,
     MuseumDetailComponent,
     NotFoundComponent,
+    MapComponent,
   ],
+
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
   ],
+
   providers: [MuseumService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

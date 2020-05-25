@@ -1,17 +1,32 @@
-<div class="card">
+<article class="card mb-3 shadow-sm">
   <div class="card-body">
-    <h2 class="card-title">{{name}}</h2>
-    <p class="card-text">{{opening}}</p>
+    <div class="card-title">
+      <h2 class="h4 mb-3">{{museum.name}}</h2>
+    </div>
+
+    <div class="">
+      <!-- PHOTO -->
+    </div>
+    <!-- Localisation -->
+    <div class="row mb-2">
+      <div class="col-1">
+        📍
+      </div>
+      <div class="col-10">
+        <p class="card-text">
+          {{museum.city}}<br>
+        </p>
+      </div>
+    </div>
+    <!-- View detail -->
+    <div class="row mb-2">
+      <div class="col-1">
+        ➕
+      </div>
+      <div class="col-10">
+        <p class="card-text"><a [routerLink]="['museumDetail/' , museum._id]">View details</a></p>
+      </div>
+    </div>
+
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{adress}}</li>
-    <li class="list-group-item">{{zip}}</li>
-    <li class="list-group-item">{{city}}</li>
-    <li class="list-group-item"> <a href="tel:{{phone}}">{{telephone}}</a></li>
-    <li class="list-group-item">
-      <a [routerLink]="['museum/', reference]">View details</a> </li>
-  </ul>
-  <div class="card-body">
-    <a href="{{website}}" class="card-link">{{website}}</a>
-  </div>
-</div>
+</article>
