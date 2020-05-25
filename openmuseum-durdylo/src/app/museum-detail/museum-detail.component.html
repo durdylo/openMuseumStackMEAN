@@ -31,7 +31,7 @@
           </div>
         </div>
         <!-- Phone -->
-        <div class="row mb-2">
+        <div *ngIf="museum.telephone" class="row mb-2">
           <div class="col-1">
             📞
           </div>
@@ -40,7 +40,7 @@
           </div>
         </div>
         <!-- Fax -->
-        <div class="row mb-2">
+        <div *ngIf="museum.fax" class="row mb-2">
           <div class="col-1">
             📠
           </div>
@@ -49,7 +49,7 @@
           </div>
         </div>
         <!-- Website -->
-        <div class="row mb-2">
+        <div *ngIf="museum.website" class="row mb-2">
           <div class="col-1">
             💻
           </div>
@@ -60,7 +60,7 @@
           </div>
         </div>
         <!-- Opening hours -->
-        <div class="row mb-2">
+        <div *ngIf="museum.opening" class="row mb-2">
           <div class="col-1">
             🕒
           </div>
